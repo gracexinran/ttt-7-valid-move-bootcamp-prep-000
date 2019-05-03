@@ -2,7 +2,7 @@
 def valid_move?(board, index)
   if index < board.length && index >= 0
    true
- elsif position_taken?(board, index)
+ elsif position_taken?(board, index) == false
    false
  elsif index >= board.length || index < 0
    false
@@ -11,6 +11,9 @@ end
 
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
 def position_taken?(board, index)
-  (board[index] == "X" || board[index] == "O")?
-  false : true
+  if board[index] == "X" || board[index] == "O"
+    false
+  else 
+    true
+  end
 end
